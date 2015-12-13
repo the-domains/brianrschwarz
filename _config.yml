@@ -1,28 +1,40 @@
-name: BrianRSchwarz
 favicon: null
-layout_spectrum: 0.061898876912891865
-typography_spectrum: 0.9326460123993456
-cta:
-  domain: null
-  bucket: null
-  version: null
-analytics:
-  google: null
-  facebook: null
-  twitter: null
+name: BrianRSchwarz
 opengraph:
   image: null
   type: null
   appId: null
-color:
-  brandColors:
-    - '#17BEBB'
-    - '#2E282A'
-    - '#CD5334'
-    - '#EDB88B'
-    - '#FAD8D6'
-  brandStrength: 0.009938329458236694
-  lightness: 0.774382465519011
-  saturation: 0.03445437480695546
-  rhythmicContrast: 0.8001714625861496
+collections:
+  - index:
+      path: /
+      number: 15
+      paginate: true
+      navigable: true
+    permalink:
+      path: '/:title/'
+    feed:
+      path: /rss.xml
+      format: rss
+      number: 10
 purpose: []
+color:
+  saturation: 1
+  brandStrength: 1
+  lightness: 0.1505376
+  brandColors:
+    - '#FEFEFE'
+    - '#283A8F'
+    - '#040304'
+    - '#FC7F77'
+    - '#880302'
+  rhythmicContrast: 0.8001714
+typography_spectrum: 0.9326460123993456
+layout_spectrum: 0.06189887691289186
+analytics:
+  twitter: null
+  google: null
+  facebook: null
+cta:
+  bucket: null
+  version: null
+  domain: null
