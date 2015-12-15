@@ -1,7 +1,7 @@
 name: BrianRSchwarz
 favicon: null
-layout_spectrum: 0.25498
-typography_spectrum: 0.12625
+layout_spectrum: 0.05316
+typography_spectrum: 0.79236
 collections:
   - index:
       path: /
@@ -28,12 +28,12 @@ opengraph:
   appId: null
 color:
   brandColors:
-    - '#1E1E20'
-    - '#6587B4'
-    - '#787876'
-    - '#E8EBE9'
-    - '#283A5E'
-  brandStrength: 0
+    - '#799dbf'
+    - '#171516'
+    - '#986759'
+    - '#ede0be'
+    - '#ff9483'
+  brandStrength: 0.25
   lightness: 0.5448028
   saturation: 0.9641577
   rhythmicContrast: 0
