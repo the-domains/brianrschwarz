@@ -1,7 +1,7 @@
 name: BrianRSchwarz
 favicon: null
 layout_spectrum: 0.7534
-typography_spectrum: 0.92359
+typography_spectrum: 0.7076
 collections:
   - index:
       path: /
@@ -34,7 +34,7 @@ color:
     - '#cec7b4'
     - '#9a9c87'
   brandStrength: 0.25
-  lightness: 0.5448028
-  saturation: 0.0625
+  lightness: 0.125
+  saturation: 0.375
   rhythmicContrast: 0
 purpose: []
