@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>BrianRSchwarz</title><link href="rss.xml" title="BrianRSchwarz feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.3"><meta name="the-grid-solution" content="390bcd06-70a3-46dc-82a6-90575fc6a131"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
+<!DOCTYPE HTML><html class="exporting wf-loading"><head><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/><title>BrianRSchwarz</title><link href="rss.xml" title="BrianRSchwarz feed" rel="alternate" type="application/rss+xml"/><meta name="generator" content="The Grid taylor/0.17.17"><meta name="the-grid-solution" content="9fbb09e9-bad5-49f9-91e7-7a02c03824b7"><style href="./css/scale/mini.css" media="(max-width: 19.9376em)" rel="stylesheet">@media (max-width: 15.625em){html{font-size:3.09375em !important}}
 @media (min-width: 15.6875em)and (max-width: 15.75em){	html{font-size:3.28125em !important}}
 @media (min-width: 15.8125em)and (max-width: 16.25em){	html{font-size:3.375em !important}}
 @media (min-width: 16.3125em)and (max-width: 16.6875em){html{font-size:3.46875em !important}}
@@ -203,13 +203,6 @@ body {
 .stack {
   z-index: 1;
   transition: transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
-}
-.group,
-.aside,
-.decoration {
-  transition: transform 0.3s ease-out;
-  -webkit-transition: -webkit-transform 0.3s ease-out;
 }
 picture {
   display: inline-block;
@@ -270,10 +263,6 @@ html.exporting a {
 .media > a {
   display: inline-block;
 }
-.media iframe {
-  transition: 0.3s opacity ease-in;
-  -webkit-transition: 0.3s opacity ease-in;
-}
 h1 a,
 h2 a,
 h3 a {
@@ -294,15 +283,11 @@ a {
   padding-top: 1px;
   padding-bottom: 1px;
 }
-.text li {
-  margin-left: 1.5em;
-}
 .decoration {
   pointer-events: none;
 }
 .svg {
   position: relative;
-  background-color: currentColor;
 }
 .svg > svg {
   position: absolute;
@@ -328,6 +313,9 @@ a {
 .svg polyline {
   stroke: currentColor;
 }
+.decoration {
+  background-color: currentColor;
+}
 .svg {
   background-color: transparent;
 }
@@ -343,12 +331,39 @@ a {
   background-color: currentColor;
   content: "";
 }
-.colors-style-aside-border .publisher,
-.colors-style-aside-border .author {
-  padding: .4vw .6vw;
+.revealed,
+.revealed > * {
+  pointer-events: none;
 }
-.cover_only_header:first-of-type {
-  position: fixed;
+.revealed .aside,
+.revealed a {
+  pointer-events: all;
+}
+.revealed {
+  background-image: none !important;
+  background-color: none !important;
+}
+.stack,
+.group,
+.aside,
+.decoration,
+.media,
+html body a.media,
+.media img,
+.media picture,
+iframe {
+  min-width: 0;
+  min-height: 0;
+  transition-duration: .3s;
+  transition-property: transform, color, background-color, opacity, clip, z-index, border-width;
+  transition-timing-function: ease-out;
+  -webkit-transition-duration: .3s;
+  -webkit-transition-property: -webkit-transform, color, background-color, opacity, clip, z-index, border-width;
+  -webkit-transition-timing-function: ease-out;
+}
+.media img {
+  transition-property: transform, color, background-color;
+  -webkit-transition-property: -webkit-transform, color, background-color;
 }
 .decoration {
   z-index: 3;
@@ -361,7 +376,7 @@ ul {
 }
 .panel .heading {
   text-transform: uppercase;
-  letter-spacing: .03rem;
+  letter-spacing: 1px;
 }
 .listing:not(.open) .shadow-overlay {
   pointer-events: none;
@@ -376,17 +391,6 @@ ul {
 .group .text,
 .group .aside {
   z-index: 2;
-}
-.group button {
-  border-radius: 3px;
-  padding: 15px 25px;
-  margin-top: 36px;
-}
-.group button:hover {
-  opacity: .8;
-}
-.group .attribution {
-  overflow: hidden;
 }
 .group .attribution:after {
   display: block;
@@ -459,6 +463,7 @@ ul {
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 4.324rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading { background-color: rgb(12, 7, 11); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a { color: rgb(93, 102, 101); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:active { color: rgb(0, 0, 0); }
@@ -551,6 +556,7 @@ ul {
 #u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher#u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher{font-size: 0.134rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.204rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover{overflow: hidden; width: 4.734rem; height: 2.874rem; position: absolute; left: -0.024rem; top: -0.024rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img{height: 2.874rem; width: 4.774rem; position: absolute; top: 0rem; left: -0.024rem;}
+#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play{z-index: 10; width: 0.964rem; height: 0.964rem; position: absolute; top: 0rem; left: 3.764rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline { color: rgb(246, 228, 213); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline a:hover { color: rgb(178, 200, 168); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .aside.attribution { color: rgb(231, 254, 236); }
@@ -587,6 +593,7 @@ ul {
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 4.204rem; position: absolute; top: 0rem; left: 0.124rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading { background-color: rgb(29, 32, 32); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a { color: rgb(154, 156, 135); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:active { color: rgb(0, 0, 0); }
@@ -623,6 +630,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.484rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading { background-color: rgb(12, 7, 11); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a { color: rgb(93, 102, 101); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:active { color: rgb(0, 0, 0); }
@@ -715,6 +723,7 @@ display: none;
 #u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher#u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher{font-size: 0.134rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.204rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover{overflow: hidden; width: 7.074rem; height: 4.264rem; position: absolute; left: -0.024rem; top: -0.024rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img{height: 4.274rem; width: 7.084rem; position: absolute; top: 0rem; left: 0.0149rem;}
+#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play{z-index: 10; width: 1.444rem; height: 1.444rem; position: absolute; top: 0rem; left: 5.624rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline { color: rgb(246, 228, 213); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline a:hover { color: rgb(178, 200, 168); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .aside.attribution { color: rgb(231, 254, 236); }
@@ -751,6 +760,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 6.304rem; position: absolute; top: 0rem; left: 0.184rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading { background-color: rgb(29, 32, 32); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a { color: rgb(154, 156, 135); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:active { color: rgb(0, 0, 0); }
@@ -787,6 +797,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.644rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading { background-color: rgb(12, 7, 11); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a { color: rgb(93, 102, 101); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:active { color: rgb(0, 0, 0); }
@@ -825,7 +836,7 @@ display: none;
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d#u-1be52be1-cf10-47c2-a4d8-d9b55551053d:before{}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d >.group.quotation { text-align: left; }
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation{font-size: 0.164rem; line-height: 0.244rem; height: 5.164rem; width: 3.044rem; position: absolute; top: 0rem; left: 0.0149rem;}
-#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote{font-size: 0.244rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.364rem; width: 1.994rem; position: absolute; left: 0.824rem; top: 0.254rem;}
+#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote{font-size: 0.244rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.364rem; width: 1.994rem; position: absolute; left: 0.824rem; top: 0.244rem;}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-desktop#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-desktop{width: 0.484rem; height: 0.484rem; position: absolute; left: -0.574rem; top: 0rem;}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution{font-size: 0.134rem; line-height: 0.204rem; width: 2.404rem; position: absolute; top: 4.704rem; left: 0.254rem;}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution-a-publisher#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution-a-publisher{font-size: 0.134rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.204rem;}
@@ -875,6 +886,7 @@ display: none;
 #u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher#u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher{font-size: 0.134rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.204rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover{overflow: hidden; width: 3.084rem; height: 5.204rem; position: absolute; left: -0.024rem; top: -0.024rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img{height: 5.204rem; width: 8.644rem; position: absolute; top: 0rem; left: -2.774rem;}
+#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play{z-index: 10; width: 0.964rem; height: 0.964rem; position: absolute; top: 0rem; left: 2.124rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline { color: rgb(246, 228, 213); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline a:hover { color: rgb(178, 200, 168); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .aside.attribution { color: rgb(231, 254, 236); }
@@ -911,6 +923,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 8.404rem; position: absolute; top: 0rem; left: 0.244rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading { background-color: rgb(29, 32, 32); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a { color: rgb(154, 156, 135); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:active { color: rgb(0, 0, 0); }
@@ -947,6 +960,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.964rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading { background-color: rgb(12, 7, 11); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a { color: rgb(93, 102, 101); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:active { color: rgb(0, 0, 0); }
@@ -1035,6 +1049,7 @@ display: none;
 #u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher#u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher{font-size: 0.134rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.204rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover{overflow: hidden; width: 4.604rem; height: 5.144rem; position: absolute; left: -0.024rem; top: -0.024rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img{height: 5.144rem; width: 8.544rem; position: absolute; top: 0rem; left: -1.964rem;}
+#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play{z-index: 10; width: 1.444rem; height: 1.444rem; position: absolute; top: 0rem; left: 3.164rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline { color: rgb(246, 228, 213); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline a:hover { color: rgb(178, 200, 168); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .aside.attribution { color: rgb(231, 254, 236); }
@@ -1071,6 +1086,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline{font-size: 0.244rem; line-height: 0.324rem; width: 12.604rem; position: absolute; top: 0rem; left: 0.364rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading { background-color: rgb(29, 32, 32); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a { color: rgb(154, 156, 135); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:active { color: rgb(0, 0, 0); }
@@ -1107,6 +1123,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading { background-color: rgb(12, 7, 11); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a { color: rgb(93, 102, 101); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:active { color: rgb(0, 0, 0); }
@@ -1195,6 +1212,7 @@ display: none;
 #u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher#u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher{font-size: 0.164rem; padding-left: 0.104rem; padding-right: 0.104rem; line-height: 0.244rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover{overflow: hidden; width: 5.744rem; height: 6rem; position: absolute; left: -0.024rem; top: -0.0149rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img{height: 6rem; width: 9.974rem; position: absolute; top: 0rem; left: -2.114rem;}
+#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play{z-index: 10; width: 1.804rem; height: 1.804rem; position: absolute; top: 0rem; left: 3.944rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline { color: rgb(246, 228, 213); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline a:hover { color: rgb(178, 200, 168); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .aside.attribution { color: rgb(231, 254, 236); }
@@ -1231,6 +1249,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline{font-size: 0.304rem; line-height: 0.394rem; width: 15.754rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading { background-color: rgb(29, 32, 32); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a { color: rgb(154, 156, 135); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:active { color: rgb(0, 0, 0); }
@@ -1267,6 +1286,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 16.204rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav .group.heading { background-color: rgb(12, 7, 11); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a { color: rgb(93, 102, 101); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav a:active { color: rgb(0, 0, 0); }
@@ -1305,9 +1325,9 @@ display: none;
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d#u-1be52be1-cf10-47c2-a4d8-d9b55551053d:before{}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d >.group.quotation { text-align: left; }
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation{font-size: 0.154rem; line-height: 0.234rem; height: 3rem; width: 5.704rem; position: absolute; top: 2.964rem; left: 0rem;}
-#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote{font-size: 0.234rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.344rem; width: 4.174rem; position: absolute; left: 1.094rem; top: 0.464rem;}
+#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote{font-size: 0.234rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.344rem; width: 4.174rem; position: absolute; left: 1.094rem; top: 0.454rem;}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-cinema#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-cinema{width: 0.454rem; height: 0.454rem; position: absolute; left: -0.634rem; top: 0rem;}
-#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution{font-size: 0.124rem; line-height: 0.184rem; width: 4.504rem; position: absolute; top: 2.364rem; left: 0.454rem;}
+#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution{font-size: 0.124rem; line-height: 0.184rem; width: 4.504rem; position: absolute; top: 2.354rem; left: 0.454rem;}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution-a-publisher#u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution-a-publisher{font-size: 0.124rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.184rem;}
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d#u-1be52be1-cf10-47c2-a4d8-d9b55551053d .group.quotation > .text.quote { color: rgb(231, 254, 236); }
 #u-1be52be1-cf10-47c2-a4d8-d9b55551053d#u-1be52be1-cf10-47c2-a4d8-d9b55551053d .group.quotation > .text.quote a { color: rgb(98, 94, 86); }
@@ -1355,6 +1375,7 @@ display: none;
 #u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher#u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher{font-size: 0.124rem; padding-left: 0.084rem; padding-right: 0.084rem; line-height: 0.184rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover{overflow: hidden; width: 5.754rem; height: 6rem; position: absolute; left: -0.024rem; top: -0.0149rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img{height: 6rem; width: 9.974rem; position: absolute; top: 0rem; left: -2.114rem;}
+#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play#u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play{z-index: 10; width: 1.804rem; height: 1.804rem; position: absolute; top: 0rem; left: 3.954rem;}
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline { color: rgb(246, 228, 213); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .title.headline a:hover { color: rgb(178, 200, 168); }
 #u-b8a0d603-7577-47f9-b157-3193989a455f#u-b8a0d603-7577-47f9-b157-3193989a455f .group.heading > .aside.attribution { color: rgb(231, 254, 236); }
@@ -1391,6 +1412,7 @@ display: none;
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline{font-size: 0.234rem; line-height: 0.304rem; width: 15.754rem; position: absolute; top: 0rem; left: 0.454rem;}
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline { color: rgb(235, 232, 224); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading > .title.headline a:hover { color: rgb(231, 224, 219); }
+#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate .group.heading { background-color: rgb(29, 32, 32); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a { color: rgb(154, 156, 135); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:hover { color: rgb(0, 0, 0); }
 #u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate#u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate a:active { color: rgb(0, 0, 0); }
@@ -1414,7 +1436,7 @@ wbr.w1800{ display: block }
  #u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-desktop {
 display: none;
 }
-}</style></head><body><div class="layout-system rust mobile" id="page-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_quote w_text w_separator w_decoration w_leader w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout last_layout opener layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher w_headline w_title w_separator w_leader w_trailer w_medium_headline w_medium_title w_author media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true w_short_headline w_short_title media_gte_narrow media_landscape w_cover w_media w_connector media_gte_half media_gte_wide layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one-2"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one-3"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias layout one i last_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one-4"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-4-l-one"></div><style id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-color">body{background-color: rgba(34, 38, 37, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav"><div kind="group" index="heading" class="group heading group heading" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline"><a class="text-decoration" href="index.html" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline-a">BrianRSchwarz</a></h1></div></article><article subject="feature" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_none stack_h_align_center uninverted horizontal fullscreen_first full line_padding_outside text_width_wide group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_huge flow_horizontal font_size_large feature stack textual i first_feature last_feature w_quote w_text w_decoration w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher stack textual" itemid="40ce2f81-1c7c-405f-8c78-ba5caeb50260" itemtype="intro" diff_index="0" index="textual" kind="stack" score="1" missed="0.5" tag="article" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260"><div kind="group" index="textual" class="group textual group textual" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual"><blockquote kind="text" index="quote" class="text-decoration short short_quote short_text text quote vfld-leader vfld-trailer text quote" specificity="0.25" itemprop="quote" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote"><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-cinema"><?xml version="1.0" encoding="utf-8"?>
+}</style></head><body><div class="layout-system rust mobile" id="page-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c"><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_quote w_text w_separator w_decoration w_leader w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout last_layout opener layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher w_headline w_title w_separator w_leader w_trailer w_medium_headline w_medium_title w_author media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true w_short_headline w_short_title media_gte_narrow media_landscape w_play w_cover w_media w_connector media_gte_half media_gte_wide layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one-2"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias w_titles layout one i feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one-3"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias layout one i last_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-3-l-one-4"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-mobile-l-one-4-l-one"></div><style id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-color">body{background-color: rgba(34, 38, 37, 1)}</style></section><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-nav" itemtype="nav" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav"><div kind="group" index="heading" class="group heading group heading" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline"><a class="text-decoration" href="index.html" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-nav-g-heading-t-headline-a">BrianRSchwarz</a></h1></div></article><article subject="feature" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_none stack_h_align_center uninverted horizontal fullscreen_first full line_padding_outside text_width_wide group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_huge flow_horizontal font_size_large feature stack textual i first_feature last_feature w_quote w_text w_decoration w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher stack textual" itemid="40ce2f81-1c7c-405f-8c78-ba5caeb50260" itemtype="intro" diff_index="0" index="textual" kind="stack" score="1" missed="0.5" tag="article" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260"><div kind="group" index="textual" class="group textual group textual" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual"><blockquote kind="text" index="quote" class="text-decoration short short_quote short_text text quote vfld-leader vfld-trailer text quote" specificity="0.25" itemprop="quote" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote"><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-cinema"><?xml version="1.0" encoding="utf-8"?>
 
 <svg preserveAspectRatio="none" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-cinema-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
@@ -1442,7 +1464,7 @@ display: none;
 	</g>
 </g>
 </svg>
-</div>Really it should be this is what <wbr class="w480"></wbr>happens <wbr class="w960"></wbr>when <a href="https://twitter.com/jsinsheim"><wbr class="w481"></wbr>@jsinsheim</a> <wbr class="w480 w961 w1799"></wbr>consumes 10,000 <wbr class="w960 w1800"></wbr>cups of coffee. I <wbr class="w480"></wbr>was <wbr class="w481"></wbr>getting a caffeine <wbr class="w960 w1799"></wbr>buzz <wbr class="w961"></wbr>by <wbr class="w480"></wbr>proxy.<div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-mobile"><?xml version="1.0" encoding="utf-8"?>
+</div>Really it should be this is what <wbr class="w480"></wbr>happens <wbr class="w960"></wbr>when <wbr class="w481"></wbr><a href="https://twitter.com/jsinsheim">@jsinsheim</a> <wbr class="w480 w961 w1799"></wbr>consumes 10,000 <wbr class="w960 w1800"></wbr>cups of coffee. I <wbr class="w480"></wbr>was <wbr class="w481"></wbr>getting a caffeine <wbr class="w960 w1799"></wbr>buzz <wbr class="w961"></wbr>by <wbr class="w480"></wbr>proxy.<div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-mobile"><?xml version="1.0" encoding="utf-8"?>
 
 <svg preserveAspectRatio="none" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-mobile-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
@@ -1456,7 +1478,17 @@ display: none;
 	</g>
 </g>
 </svg>
-</div></blockquote><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution"><picture id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution-a-avatar" class="aside avatar aside avatar"><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://pbs.twimg.com/profile_images/448242196290867200/9jNkMIzu_bigger.jpeg" media="(min-width: 1441px)" /><source srcset="https://pbs.twimg.com/profile_images/448242196290867200/9jNkMIzu_bigger.jpeg" media="(min-width: 721px)" /><source srcset="https://pbs.twimg.com/profile_images/448242196290867200/9jNkMIzu_bigger.jpeg" media="(min-width: 1px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture><a kind="aside" index="author" class="text-decoration aside author aside author" href="http://twitter.com/brianrschwarz" itemprop="author" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution-a-author">brianrschwarz</a><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://twitter.com/BrianRSchwarz/status/676483083428896768" itemprop="publisher" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution-a-publisher">Twitter</a></div></div></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack quotation i first_stack w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher stack quotation" itemid="1be52be1-cf10-47c2-a4d8-d9b55551053d" itemtype="article" diff_index="2" index="quotation" kind="stack" score="0.1" tag="article" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d"><div kind="group" index="quotation" class="group quotation group quotation" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation"><blockquote kind="text" index="quote" class="text-decoration short short_quote short_text text quote vfld-leader vfld-trailer text quote" specificity="0.25" itemprop="quote" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote"><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-cinema"><svg viewBox="0 0 72 72" preserveAspectRatio="none"><use xlink:href="#u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-cinema-svg"></use></svg></div><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-desktop"><svg viewBox="0 0 72 72" preserveAspectRatio="none"><use xlink:href="#u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-desktop-svg"></use></svg></div>The latest Tweets <wbr class="w960"></wbr>from Brian <wbr class="w480 w961 w1799"></wbr>Schwarz <wbr class="w481 w960 w1800"></wbr>(<a href="https://twitter.com/BrianRSchwarz">@BrianRSchwarz</a>). <wbr class="w480 w960 w961 w1799"></wbr>Reader at Sarah <wbr class="w960"></wbr>Jane <wbr class="w1800"></wbr>Freymann <wbr class="w480 w481 w960 w961 w1799"></wbr>Agency for the ever <wbr class="w960"></wbr>fantastic <a href="https://twitter.com/jsinsheim"><wbr class="w480 w960 w961 w1799 w1800"></wbr>@jsinsheim</a>. <wbr class="w960"></wbr>Musician, <wbr class="w481"></wbr>Author, <wbr class="w480 w960 w961 w1799"></wbr>World-<wbr class="w1800"></wbr>Traveler, <wbr class="w960"></wbr>Pet-enthusiast. <wbr class="w480 w960 w961 w1799"></wbr>Minneapolis, <wbr class="w481"></wbr>MN<div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-mobile"><svg viewBox="0 0 72 72" preserveAspectRatio="none"><use xlink:href="#u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-mobile-svg"></use></svg></div></blockquote><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution"><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://twitter.com/BrianRSchwarz" itemprop="publisher" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution-a-publisher">Twitter</a></div></div></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack bg_heading i heading w_cover w_media w_headline w_title w_decoration w_attribution w_aside w_medium_headline w_medium_title w_author w_publisher media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true stack bg_heading" itemid="94e6457d-528a-4809-9779-04a5ad737612" itemtype="article" diff_index="8" index="bg_heading" kind="stack" score="5.875" missed="0.125" tag="article" id="u-94e6457d-528a-4809-9779-04a5ad737612"><div kind="group" index="heading" class="group heading group heading" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-t-headline"><a class="text-decoration" href="https://brianrschwarz.wordpress.com/2015/07/06/the-most-important-thing-to-any-creative/" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-t-headline-a">The Most <wbr class="w480"></wbr>Important <wbr class="w481 w960"></wbr>Thing <wbr class="w480"></wbr>To <wbr class="w961 w1799"></wbr>Any <wbr class="w960 w1800"></wbr>Creative</a></h1><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-a-attribution"><a kind="aside" index="author" class="text-decoration aside author aside author" href="https://brianrschwarz.wordpress.com/author/brianrschwarz/" itemprop="author" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-a-attribution-a-author">brianrschwarz</a><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://brianrschwarz.wordpress.com/2015/07/06/the-most-important-thing-to-any-creative/" itemprop="publisher" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-a-attribution-a-publisher">brianrschwarz</a></div></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="200" max-height="200" href="https://brianrschwarz.wordpress.com/2015/07/06/the-most-important-thing-to-any-creative/" id="u-94e6457d-528a-4809-9779-04a5ad737612-m-cover"><picture id="u-94e6457d-528a-4809-9779-04a5ad737612-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack bg_heading i heading w_cover w_media w_aside w_headline w_title w_decoration w_attribution w_short_headline w_short_title w_author w_publisher media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true stack bg_heading" itemid="b8a0d603-7577-47f9-b157-3193989a455f" itemtype="article" diff_index="8" index="bg_heading" kind="stack" score="5.875" missed="0.125" tag="article" id="u-b8a0d603-7577-47f9-b157-3193989a455f"><div kind="group" index="heading" class="group heading group heading" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-t-headline"><a class="text-decoration" href="https://www.youtube.com/watch?v=Q20XlWR_Jgk" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-t-headline-a">Going Through - <wbr class="w480 w960"></wbr>Acoustic</a></h1><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution"><a kind="aside" index="author" class="text-decoration aside author aside author" href="https://www.youtube.com/user/MyLadyFour" itemprop="author" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-author">MyLadyFour</a><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://www.youtube.com/watch?v=Q20XlWR_Jgk" itemprop="publisher" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher">YouTube</a></div></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="480" max-height="289" href="https://www.youtube.com/watch?v=Q20XlWR_Jgk" id="u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover"><picture id="u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/4d1d71d93d8388eb8fc84f0a092bd0f9/insta_brannan.jpg?height=287&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=477, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a><div kind="aside" index="aside" data-src="https://www.youtube.com/embed/Q20XlWR_Jgk?feature=oembed&autoplay=1" data-width="854" data-height="480" class="aside aside aside aside" id="u-b8a0d603-7577-47f9-b157-3193989a455f-a-aside"></div></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack graphical i last_stack w_cover w_media w_decoration media_gte_narrow media_gte_half media_gte_wide media_lt_full media_landscape crop_true stack graphical" itemid="db767f73-3656-4bce-8676-dfcdd3753b28" itemtype="article" diff_index="3" index="graphical" kind="stack" score="3" tag="article" id="u-db767f73-3656-4bce-8676-dfcdd3753b28"><div kind="group" index="graphical" class="group graphical group graphical" id="u-db767f73-3656-4bce-8676-dfcdd3753b28-g-graphical"><a kind="media" index="cover" class="vfld media cover vfld-leader vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="960" max-height="640" href="db767f73-3656-4bce-8676-dfcdd3753b28/" id="u-db767f73-3656-4bce-8676-dfcdd3753b28-g-graphical-m-cover"><picture id="u-db767f73-3656-4bce-8676-dfcdd3753b28-g-graphical-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/99f09a976a8a54c014443e33817f1204/insta_brannan.jpg?height=624&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=936, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c566f3cf2ccd51101d410e0992be0d24/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=297&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=445, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/41f747f3fed3ddc495649dca71d67865/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=594&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=890 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5d11938987a33d398078d1925ebf078c/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=445&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=667, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/d99c368c05e404a8ce10c279278afd62/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=960 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline"><a class="text-decoration" href="rss.xml" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline-a">BrianRSchwarz feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_quote w_text w_separator w_decoration w_leader w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout last_layout opener layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher w_headline w_title w_separator w_leader w_trailer w_medium_headline w_medium_title w_author media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true w_short_headline w_short_title media_gte_narrow media_landscape w_cover w_media w_connector media_gte_half media_gte_wide layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="three" diff_index="2" index="three" class="colors-use-local layout three i first_layout feed layout three" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-3-l-three"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias layout one i last_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-4-l-one"></div><style id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-color">body{background-color: rgba(34, 38, 37, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_quote w_text w_separator w_decoration w_leader w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout last_layout opener layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher w_headline w_title w_separator w_leader w_trailer w_medium_headline w_medium_title w_author media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true w_short_headline w_short_title media_gte_narrow media_landscape w_cover w_media w_connector media_gte_half media_gte_wide layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="three" diff_index="2" index="three" class="colors-use-local layout three i first_layout feed layout three" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-3-l-three"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias layout one i last_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-4-l-one"></div><style id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-color">body{background-color: rgba(34, 38, 37, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+</div></blockquote><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution"><picture id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution-a-avatar" class="aside avatar aside avatar"><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://pbs.twimg.com/profile_images/448242196290867200/9jNkMIzu_bigger.jpeg" media="(min-width: 1441px)" /><source srcset="https://pbs.twimg.com/profile_images/448242196290867200/9jNkMIzu_bigger.jpeg" media="(min-width: 721px)" /><source srcset="https://pbs.twimg.com/profile_images/448242196290867200/9jNkMIzu_bigger.jpeg" media="(min-width: 1px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture><a kind="aside" index="author" class="text-decoration aside author aside author" href="http://twitter.com/brianrschwarz" itemprop="author" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution-a-author">brianrschwarz</a><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://twitter.com/BrianRSchwarz/status/676483083428896768" itemprop="publisher" id="u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-a-attribution-a-publisher">Twitter</a></div></div></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack quotation i first_stack w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher stack quotation" itemid="1be52be1-cf10-47c2-a4d8-d9b55551053d" itemtype="article" diff_index="2" index="quotation" kind="stack" score="0.1" tag="article" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d"><div kind="group" index="quotation" class="group quotation group quotation" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation"><blockquote kind="text" index="quote" class="text-decoration short short_quote short_text text quote vfld-leader vfld-trailer text quote" specificity="0.25" itemprop="quote" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote"><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-cinema"><svg viewBox="0 0 72 72" preserveAspectRatio="none"><use xlink:href="#u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-cinema-svg"></use></svg></div><div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-desktop"><svg viewBox="0 0 72 72" preserveAspectRatio="none"><use xlink:href="#u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-desktop-svg"></use></svg></div>The latest Tweets <wbr class="w960"></wbr>from Brian <wbr class="w480 w961 w1799"></wbr>Schwarz <wbr class="w481 w960 w1800"></wbr>(<a href="https://twitter.com/BrianRSchwarz">@BrianRSchwarz</a>). <wbr class="w480 w960 w961 w1799"></wbr>Reader at Sarah <wbr class="w960"></wbr>Jane <wbr class="w1800"></wbr>Freymann <wbr class="w480 w481 w960 w961 w1799"></wbr>Agency for the ever <wbr class="w960"></wbr>fantastic <wbr class="w480"></wbr><wbr class="w960"></wbr><wbr class="w961"></wbr><wbr class="w1799"></wbr><wbr class="w1800"></wbr><a href="https://twitter.com/jsinsheim">@jsinsheim</a>. <wbr class="w960"></wbr>Musician, <wbr class="w481"></wbr>Author, <wbr class="w480 w960 w961 w1799"></wbr>World-<wbr class="w1800"></wbr>Traveler, <wbr class="w960"></wbr>Pet-enthusiast. <wbr class="w480 w960 w961 w1799"></wbr>Minneapolis, <wbr class="w481"></wbr>MN<div kind="decoration" index="icon" class="decoration icon decoration icon svg" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-t-quote-d-icon-mobile"><svg viewBox="0 0 72 72" preserveAspectRatio="none"><use xlink:href="#u-40ce2f81-1c7c-405f-8c78-ba5caeb50260-g-textual-t-quote-d-icon-mobile-svg"></use></svg></div></blockquote><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution"><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://twitter.com/BrianRSchwarz" itemprop="publisher" id="u-1be52be1-cf10-47c2-a4d8-d9b55551053d-g-quotation-a-attribution-a-publisher">Twitter</a></div></div></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack bg_heading i heading w_cover w_media w_headline w_title w_decoration w_attribution w_aside w_medium_headline w_medium_title w_author w_publisher media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true stack bg_heading" itemid="94e6457d-528a-4809-9779-04a5ad737612" itemtype="article" diff_index="8" index="bg_heading" kind="stack" score="5.875" missed="0.125" tag="article" id="u-94e6457d-528a-4809-9779-04a5ad737612"><div kind="group" index="heading" class="group heading group heading" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading"><h1 kind="title" index="headline" class="medium medium_headline medium_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-t-headline"><a class="text-decoration" href="https://brianrschwarz.wordpress.com/2015/07/06/the-most-important-thing-to-any-creative/" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-t-headline-a">The Most <wbr class="w480"></wbr>Important <wbr class="w481 w960"></wbr>Thing <wbr class="w480"></wbr>To <wbr class="w961 w1799"></wbr>Any <wbr class="w960 w1800"></wbr>Creative</a></h1><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-a-attribution"><a kind="aside" index="author" class="text-decoration aside author aside author" href="https://brianrschwarz.wordpress.com/author/brianrschwarz/" itemprop="author" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-a-attribution-a-author">brianrschwarz</a><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://brianrschwarz.wordpress.com/2015/07/06/the-most-important-thing-to-any-creative/" itemprop="publisher" id="u-94e6457d-528a-4809-9779-04a5ad737612-g-heading-a-attribution-a-publisher">brianrschwarz</a></div></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="200" max-height="200" href="https://brianrschwarz.wordpress.com/2015/07/06/the-most-important-thing-to-any-creative/" id="u-94e6457d-528a-4809-9779-04a5ad737612-m-cover"><picture id="u-94e6457d-528a-4809-9779-04a5ad737612-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/f50fe4cd911e77ac6b8ef54c53d5dfd4/insta_brannan.jpg?height=200&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2F6775644edf10075b41fb84e0f1de6c0d1d3bcf18.jpg&width=200 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack bg_heading i heading w_cover w_media w_headline w_title w_decoration w_attribution w_aside w_short_headline w_short_title w_author w_publisher media_gte_narrow media_lt_half media_lt_wide media_lt_full media_landscape crop_true w_play stack bg_heading" itemid="b8a0d603-7577-47f9-b157-3193989a455f" itemtype="article" diff_index="8" index="bg_heading" kind="stack" score="5.875" missed="0.125" tag="article" id="u-b8a0d603-7577-47f9-b157-3193989a455f"><div kind="group" index="heading" class="group heading group heading" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-t-headline"><a class="text-decoration" href="https://www.youtube.com/watch?v=Q20XlWR_Jgk" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-t-headline-a">Going Through - <wbr class="w480 w960"></wbr>Acoustic</a></h1><div kind="aside" index="attribution" class="aside attribution aside attribution" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution"><a kind="aside" index="author" class="text-decoration aside author aside author" href="https://www.youtube.com/user/MyLadyFour" itemprop="author" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-author">MyLadyFour</a><a kind="aside" index="publisher" class="text-decoration aside publisher aside publisher" href="https://www.youtube.com/watch?v=Q20XlWR_Jgk" itemprop="publisher" id="u-b8a0d603-7577-47f9-b157-3193989a455f-g-heading-a-attribution-a-publisher">YouTube</a></div></div><a kind="media" index="cover" itemprop="cover" class="media cover media cover" max-width="480" max-height="289" href="https://www.youtube.com/watch?v=Q20XlWR_Jgk" id="u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover"><picture id="u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/4d1d71d93d8388eb8fc84f0a092bd0f9/insta_brannan.jpg?height=287&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=477, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/1fcb5245e0495d74216cdfe52b98b23f/insta_brannan.jpg?height=289&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fb753f9fbdbbd823fc6c4f098984b21ee55050cd9.jpg&width=480 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture><div kind="aside" index="play" data-src="https://www.youtube.com/embed/Q20XlWR_Jgk?feature=oembed&autoplay=1" data-width="854" data-height="480" class="aside play aside play svg" id="u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play"><?xml version="1.0" encoding="utf-8"?>
+
+<svg preserveAspectRatio="none" id="u-b8a0d603-7577-47f9-b157-3193989a455f-m-cover-a-play-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 90 612 612" enable-background="new 0 90 612 612" xml:space="preserve">
+<path fill="#FC4949" d="M306,670.8c-74.5,0-144.6-29-197.3-81.7C56,536.3,27,466.3,27,391.8s29-144.6,81.7-197.3
+	s122.8-81.7,197.3-81.7s144.6,29,197.3,81.7S585,317.2,585,391.8S556,536.3,503.3,589S380.5,670.8,306,670.8z M306,160.8
+	c-61.7,0-119.7,24-163.3,67.7C99,272,75,330,75,391.8s24,119.7,67.7,163.3c43.6,43.6,101.6,67.7,163.3,67.7s119.7-24,163.3-67.7
+	S537,453.5,537,391.8S513,272,469.3,228.4C425.7,184.8,367.7,160.8,306,160.8z"/>
+<polygon fill="#FC4949" points="275.4,322 370.6,391.8 275.4,461.5 "/>
+</svg>
+</div></a></article><article subject="stack" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_text_emphasis_no_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_xsmall stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full aspect_natural line_padding_inside text_width_wider group_h_align_none text_align_left flow_unreversed group_v_outset_none group_v_inset_small group_h_outset_none group_h_inset_small flow_vertical font_size_large stack graphical i last_stack w_cover w_media w_decoration media_gte_narrow media_gte_half media_gte_wide media_lt_full media_landscape crop_true stack graphical" itemid="db767f73-3656-4bce-8676-dfcdd3753b28" itemtype="article" diff_index="3" index="graphical" kind="stack" score="3" tag="article" id="u-db767f73-3656-4bce-8676-dfcdd3753b28"><div kind="group" index="graphical" class="group graphical group graphical" id="u-db767f73-3656-4bce-8676-dfcdd3753b28-g-graphical"><a kind="media" index="cover" class="vfld media cover vfld-leader vfld-trailer media cover" specificity="0.25" itemprop="cover" max-width="960" max-height="640" href="db767f73-3656-4bce-8676-dfcdd3753b28/" id="u-db767f73-3656-4bce-8676-dfcdd3753b28-g-graphical-m-cover"><picture id="u-db767f73-3656-4bce-8676-dfcdd3753b28-g-graphical-m-cover-img" class=""><!--[if IE 9]><video style="display: none;"><![endif]--><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 1441px) and (min-width: 1441px) and (max-width: 1799px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 1441px) and (min-width: 1800px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/99f09a976a8a54c014443e33817f1204/insta_brannan.jpg?height=624&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=936, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 721px) and (min-width: 721px) and (max-width: 960px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/15e22057496107fc163c8cc5c32cdab8/insta_brannan.jpg?height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&width=960 2x" media="(min-width: 721px) and (min-width: 961px) and (max-width: 1440px)" /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/c566f3cf2ccd51101d410e0992be0d24/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=297&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=445, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/41f747f3fed3ddc495649dca71d67865/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=594&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=890 2x" media="(min-width: 1px) and (max-width: 480px) " /><source srcset="https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/5d11938987a33d398078d1925ebf078c/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=445&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=667, https://imgflo.herokuapp.com/graph/vahj1ThiexotieMo/d99c368c05e404a8ce10c279278afd62/gradientmap.jpg?color1=%2320131D&color2=%2340263B&color3=%23814B76&color4=%23C3BAA2&color5=%23EBE8E0&height=640&input=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fthe-grid-img%2Fp%2Fbe3b1e8529b5c854015abcd96d87295aa2883074.jpg&srgb=True&stop1=0.1&stop2=0.3&stop3=0.5&stop4=0.7&stop5=0.9&width=960 2x" media="(min-width: 1px) and (min-width: 481px) and (max-width: 720px)" /><!--[if IE 9]></video><![endif]--><img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="  /></picture></a></div></article><article subject="panel" class="col-1 export-linebreaks not_decorated color_adjust_none color_styles_no_group_bg color_schema_default stack_transparency_off v_emphasis_none h_emphasis_none group_overlap_none stack_v_outset_none stack_v_inset_none stack_h_outset_none stack_h_inset_xsmall stack_h_align_center uninverted vertical collapsed full line_padding_aside_inside text_width_full group_h_align_none text_align_center flow_unreversed group_v_outset_none group_v_inset_none group_h_outset_none group_h_inset_xsmall flow_vertical font_size_small panel stack heading i first_panel last_panel w_headline w_title w_decoration w_short_headline w_short_title stack heading" itemid="u-page-alternate" itemtype="alternate" diff_index="2" index="heading" kind="stack" score="1.875" missed="0.125" tag="article" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate"><div kind="group" index="heading" class="group heading group heading" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading"><h1 kind="title" index="headline" class="short short_headline short_title title headline vfld-leader vfld-trailer title headline" specificity="0.25" itemprop="title" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline"><a class="text-decoration" href="rss.xml" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-alternate-g-heading-t-headline-a">BrianRSchwarz feed</a></h1></div></article><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_quote w_text w_separator w_decoration w_leader w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout last_layout opener layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher w_headline w_title w_separator w_leader w_trailer w_medium_headline w_medium_title w_author media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true w_short_headline w_short_title media_gte_narrow media_landscape w_play w_cover w_media w_connector media_gte_half media_gte_wide layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-3"><div kind="layout" style="position: relative" sequence="three" diff_index="2" index="three" class="colors-use-local layout three i first_layout feed layout three" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-3-l-three"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias layout one i last_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-desktop-l-one-4-l-one"></div><style id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-color">body{background-color: rgba(34, 38, 37, 1)}</style></section><section kind="layout" style="position: relative" sequence="one" role="header" diff_index="0" index="one" class="layout one i first_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout header layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="opener" diff_index="0" index="one" class="layout one i w_quote w_text w_separator w_decoration w_leader w_attribution w_aside w_short_quote w_short_text w_icon w_avatar w_author w_publisher layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-2"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_texts layout one i first_layout last_layout opener layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-2-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="feed" diff_index="0" index="one" class="layout one i w_quote w_text w_attribution w_aside w_short_quote w_short_text w_icon w_decoration w_publisher w_headline w_title w_separator w_leader w_trailer w_medium_headline w_medium_title w_author media_lt_narrow media_lt_half media_lt_wide media_lt_full media_square crop_true w_short_headline w_short_title media_gte_narrow media_landscape w_play w_cover w_media w_connector media_gte_half media_gte_wide layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-3"><div kind="layout" style="position: relative" sequence="three" diff_index="2" index="three" class="colors-use-local layout three i first_layout feed layout three" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-3-l-three"></div><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_medias layout one i last_layout feed layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-3-l-one"></div></section><section kind="layout" style="position: relative" sequence="one" role="footer" diff_index="0" index="one" class="layout one i last_layout w_headline w_title w_separator w_decoration w_leader w_trailer w_icon w_short_headline w_short_title layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-4"><div kind="layout" style="position: relative" sequence="one" diff_index="0" index="one" class="colors-use-local w_titles layout one i first_layout last_layout footer layout one" id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-cinema-l-one-4-l-one"></div><style id="u-57dfec0b-4f47-4ec9-99b6-8c23dfbdfa2c-color">body{background-color: rgba(34, 38, 37, 1)}</style></section></div><script href="./client.js">(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 /*! Hammer.JS - v1.1.3 - 2014-05-20
  * http://eightmedia.github.io/hammer.js
  *
@@ -1860,7 +1892,7 @@ module.exports = function() {
 
 
 },{}],5:[function(require,module,exports){
-var cache, fade, frames, hiding, highlighting, showing;
+var Hide, Show, cache, fade, frames, hiding, highlighting, showing;
 
 highlighting = showing = hiding = null;
 
@@ -1887,40 +1919,69 @@ fade = function(element, to, from) {
   return frames[element.id] = requestAnimationFrame(Frame);
 };
 
+document.body.addEventListener('mousemove', function(e) {});
+
+Hide = function(target) {
+  clearTimeout(showing);
+  setTimeout(function() {
+    if (hiding !== target) {
+      hiding.style.backgroundImage = cache[hiding.id];
+      return delete cache[hiding.id];
+    }
+  }, 300);
+  hiding = highlighting;
+  highlighting = null;
+  return fade(hiding.getElementsByTagName('img')[0], 1);
+};
+
+Show = function(target, x, y, img) {
+  var colors, value;
+  if (target !== highlighting) {
+    clearTimeout(showing);
+    showing = setTimeout(function() {
+      if (highlighting === target) {
+        return fade(img, 0.8);
+      }
+    }, 150);
+  }
+  if ((value = cache[target.id]) == null) {
+    cache[target.id] = value = window.getComputedStyle(target)['background-image'];
+  }
+  if (value.indexOf('linear-gradient') > -1) {
+    colors = value.match(/rgba?\((.*?)\)|black|white|transparent/g);
+    if (colors[1].indexOf('rgba') > -1) {
+      colors[1] = colors[1].replace(/,\s*[\d\.]+\)/, ', 0.7)');
+    } else {
+      colors[1] = colors[1].replace('rgb', 'rgba').replace(/\)/, ', 0.7)');
+    }
+    value = 'radial-gradient(circle at ' + x + 'px ' + y + 'px, rgba(255,255,255,0.5) -10%, ' + colors[1] + ' 25%, ' + colors[0] + ' 90%)';
+  } else {
+    return;
+  }
+  target.style.backgroundImage = value;
+  return highlighting = target;
+};
+
+document.body.addEventListener('click', function(e) {
+  if (highlighting) {
+    return Hide(highlighting);
+  }
+});
+
 document.body.addEventListener('mousemove', function(e) {
-  var clientX, clientY, colors, img, parent, ref, target, value;
+  var clientX, clientY, img, parent, ref, target;
   target = e.target;
   while (target) {
-    if (target.tagName === 'A' && target.classList.contains('media')) {
+    if (target.tagName === 'A' && target.classList.contains('media') && !target.classList.contains('revealed')) {
       break;
     }
     target = target.parentNode;
   }
   if (highlighting && highlighting !== target) {
-    clearTimeout(showing);
-    setTimeout(function() {
-      if (hiding !== target) {
-        hiding.style.backgroundImage = cache[hiding.id];
-        return delete cache[hiding.id];
-      }
-    }, 300);
-    hiding = highlighting;
-    highlighting = null;
-    fade(hiding.getElementsByTagName('img')[0], 1);
+    Hide(highlighting);
   }
   if (target) {
     if ((ref = (img = target.getElementsByTagName('img')[0])) != null ? ref.complete : void 0) {
-      if (target !== highlighting) {
-        clearTimeout(showing);
-        showing = setTimeout(function() {
-          if (highlighting === target) {
-            return fade(img, 0.8);
-          }
-        }, 150);
-      }
-      if ((value = cache[target.id]) == null) {
-        cache[target.id] = value = window.getComputedStyle(target)['background-image'];
-      }
       clientX = e.pageX;
       clientY = e.pageY;
       parent = target;
@@ -1929,19 +1990,7 @@ document.body.addEventListener('mousemove', function(e) {
         clientY -= parent.offsetTop;
         parent = parent.offsetParent;
       }
-      if (value.indexOf('linear-gradient') > -1) {
-        colors = value.match(/rgba?\((.*?)\)|black|white|transparent/g);
-        if (colors[1].indexOf('rgba') > -1) {
-          colors[1] = colors[1].replace(/,\s*[\d\.]+\)/, ', 0.7)');
-        } else {
-          colors[1] = colors[1].replace('rgb', 'rgba').replace(/\)/, ', 0.7)');
-        }
-        value = 'radial-gradient(circle at ' + clientX + 'px ' + clientY + 'px, rgba(255,255,255,0.5) -10%, ' + colors[1] + ' 25%, ' + colors[0] + ' 90%)';
-      } else {
-        return;
-      }
-      target.style.backgroundImage = value;
-      return highlighting = target;
+      return Show(target, clientX, clientY, img);
     }
   }
 });
@@ -2089,11 +2138,13 @@ module.exports = function() {
 
 
 },{"./reflow":9}],8:[function(require,module,exports){
-var Player, Youtube, iframe, revealed, rgb2hex;
+var Player, Youtube, iframe, reflow, revealed, rgb2hex;
 
 iframe = null;
 
 Youtube = null;
+
+reflow = require('./reflow');
 
 Player = function(id, src, width, height, color, bg) {
   if (src.indexOf('youtube') > -1) {
@@ -2102,6 +2153,8 @@ Player = function(id, src, width, height, color, bg) {
   src = src.replace('COLOR', color).replace('BG', bg);
   if (location.protocol !== 'https:') {
     src = src.replace('https:', 'http:');
+  } else {
+    src = src.replace('http:', 'https:');
   }
   iframe = document.createElement('iframe');
   iframe.id = id;
@@ -2114,79 +2167,294 @@ Player = function(id, src, width, height, color, bg) {
   iframe.style.left = 0;
   iframe.style.right = 0;
   iframe.style.position = 'absolute';
-  iframe.style.opacity = 0.2;
+  iframe.style.opacity = 0;
   iframe.onload = function() {
-    return iframe.style.opacity = 1;
+    return iframe.showing = setTimeout(function() {
+      iframe.classList.add('loaded');
+      iframe.style.display = '';
+      iframe.showing = setTimeout(function() {
+        iframe.style.opacity = 1;
+        return iframe.showing = setTimeout(function() {
+          return typeof iframe.onloaded === "function" ? iframe.onloaded(true) : void 0;
+        }, 500);
+      }, 1);
+      return typeof iframe.onloaded === "function" ? iframe.onloaded() : void 0;
+    }, 300);
   };
   return iframe;
 };
 
 revealed = null;
 
-Player.reveal = function(iframe) {
-  var diff, i, left, len, parent, play, ref, ref1, sibling, target, top, translateX, translateY;
-  while (target = (target || iframe).parentNode) {
-    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
-      if (target.parentNode.classList.contains('group')) {
-        parent = target.parentNode;
-      } else {
-        parent = target;
+Player.findMedia = function(iframe) {
+  var i, len, media, ref, ref1, ref2, sibling;
+  if (iframe.parentNode) {
+    ref = iframe.parentNode.childNodes;
+    for (i = 0, len = ref.length; i < len; i++) {
+      sibling = ref[i];
+      if ((ref1 = sibling.classList) != null ? ref1.contains('media') : void 0) {
+        return sibling;
       }
-      revealed = iframe;
-      play = parent.getElementsByClassName('play')[0];
-      left = target.offsetWidth - play.offsetLeft - play.offsetWidth;
-      top = -play.offsetTop;
-      play.style.webkitTransformOrigin = 'top right';
-      play.style.webkitTransform = 'translateX(' + left + 'px) translateY(' + top + 'px) scale(0.5)';
-      target.classList.add('revealed');
-      ref1 = parent.parentNode.childNodes;
-      for (i = 0, len = ref1.length; i < len; i++) {
-        sibling = ref1[i];
-        if (sibling.nodeType === 1 && sibling !== parent) {
-          translateX = translateY = null;
-          if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
-            translateX = -diff;
-          }
-          if ((diff = target.offsetLeft + target.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
-            if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
-              translateX = diff;
-            }
-          }
-          if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
-            translateY = -diff;
-          }
-          if ((diff = target.offsetTop + target.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
-            if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
-              translateY = diff;
-            }
-          }
-          if (Math.abs(translateX) > Math.abs(translateY)) {
-            sibling.style.webkitTransform = 'translateY(' + translateY + 'px)';
-          } else {
-            sibling.style.webkitTransform = 'translateX(' + translateX + 'px)';
-          }
-          console.log(translateX, translateY, sibling);
-        }
+    }
+    while (media = (media || iframe).parentNode) {
+      if ((ref2 = media.classList) != null ? ref2.contains('media') : void 0) {
+        return media;
       }
     }
   }
 };
 
+Player.getClipRect = function(img, media) {
+  var rect;
+  rect = {};
+  rect.left = -img.offsetLeft;
+  rect.right = -img.offsetLeft + img.parentNode.offsetWidth;
+  rect.top = -img.offsetTop;
+  rect.bottom = img.offsetTop + img.parentNode.offsetHeight;
+  return rect;
+};
+
+Player.rect = function(rect) {
+  return 'rect(' + rect.top + 'px,' + rect.right + 'px,' + rect.bottom + 'px,' + rect.left + 'px)';
+};
+
+Player.set = function(element, property, value) {
+  var webkit;
+  webkit = 'webkit' + property.charAt(0).toUpperCase() + property.substring(1);
+  if (element.style[webkit] != null) {
+    return element.style[webkit] = value;
+  } else {
+    return element.style[property] = value;
+  }
+};
+
+Player.reveal = function(iframe, instant) {
+  var firstTime, img, layout, left, media, offsetLeft, offsetTop, parent, play, ratio, rectLeft, rectRight, ref, root, shiftLeft, stack, targetHeight, targetWidth, top, translateX, translateY, zoom;
+  iframe.style.maxHeight = window.innerHeight + 'px';
+  if (media = Player.findMedia(iframe)) {
+    if ((ref = media.classList) != null ? ref.contains('media') : void 0) {
+      root = stack = media;
+      while (root = root.parentNode) {
+        if (root.classList.contains('stack')) {
+          stack = root;
+        }
+        if (root.classList.contains('layout-system')) {
+          break;
+        }
+      }
+      layout = reflow.getLayout(root, stack);
+      console.log('get layout', root, stack, layout);
+      img = media.querySelector('picture, img');
+      offsetLeft = media.offsetLeft;
+      offsetTop = media.offsetTop;
+      if (media.parentNode.classList.contains('group')) {
+        parent = media.parentNode;
+        offsetLeft += parent.offsetLeft;
+        offsetTop += parent.offsetTop;
+      } else {
+        parent = media;
+      }
+      revealed = iframe;
+      play = parent.getElementsByClassName('play')[0];
+      Player.set(play, 'transformOrigin', 'top right');
+      if (!media.classList.contains('revealed')) {
+        firstTime = true;
+        media.classList.add('revealed');
+      }
+      if (layout && (layout.offsetWidth > media.offsetWidth * 2.5 || media.offsetWidth < 350 || media.offsetHeight < 200) && iframe.src.indexOf('soundcloud') === -1) {
+        if (firstTime) {
+          Player.set(img, 'transition', 'none');
+          img.style.clip = Player.rect(Player.getClipRect(img));
+          return requestAnimationFrame(function() {
+            Player.set(img, 'transition', '');
+            return requestAnimationFrame(function() {
+              return Player.reveal(iframe);
+            });
+          });
+        }
+        iframe.style.zIndex = 6;
+        media.classList.add('expanded');
+        translateX = -offsetLeft - stack.offsetLeft;
+        translateY = -offsetTop - stack.offsetTop;
+        if (stack.parentNode !== layout) {
+          translateX += layout.offsetLeft + layout.parentNode.offsetLeft;
+          translateY += layout.offsetTop + layout.parentNode.offsetTop;
+        }
+        Player.set(img, 'transform', img.style.transform = 'translateX(' + (translateX - img.offsetLeft) + 'px) ' + 'translateY(' + (translateY - img.offsetTop) + 'px) ');
+        if (img) {
+          Player.set(media, 'transformOrigin', 'top left');
+          Player.set(img, 'transformOrigin', 'top left');
+          ratio = img.offsetWidth / img.offsetHeight;
+          targetHeight = Math.min(layout.offsetHeight, window.innerHeight);
+          targetWidth = ratio * targetHeight;
+          console.log(layout, layout.offsetHeight, targetHeight, 44444);
+          iframe.style.left = translateX + media.offsetLeft + 'px';
+          iframe.style.top = translateY + media.offsetTop + 'px';
+          iframe.style.width = layout.offsetWidth + 'px';
+          iframe.style.height = layout.offsetHeight + 'px';
+          zoom = targetHeight / img.offsetHeight;
+          shiftLeft = (layout.offsetWidth - targetWidth) / 2;
+          rectLeft = rectRight = Math.max(0, -shiftLeft / zoom);
+          if (media.style.overflow !== 'visible') {
+            requestAnimationFrame(function() {
+              media.style.overflow = 'visible';
+              stack.style.overflow = 'visible';
+              img.style.clip = Player.rect(Player.getClipRect(img));
+              return requestAnimationFrame(function() {
+                return img.style.clip = 'rect(0px, ' + (img.offsetWidth - rectRight) + 'px, ' + img.offsetHeight + 'px, ' + rectLeft + 'px)';
+              });
+            });
+          } else {
+            img.style.clip = 'rect(0px, ' + (img.offsetWidth - rectRight) + 'px, ' + img.offsetHeight + 'px, ' + rectLeft + 'px)';
+          }
+          if (img.style.webkitTransform) {
+            img.style.webkitTransform += ' translateX(' + shiftLeft + 'px)  scale(' + zoom.toFixed(3) + ') ';
+          } else if (img.style.transform) {
+            img.style.transform += ' translateX(' + shiftLeft + 'px)  scale(' + zoom.toFixed(3) + ') ';
+          }
+          left = translateX + layout.offsetWidth - play.offsetLeft - play.offsetWidth;
+          top = translateY - play.offsetTop;
+          Player.set(play, 'transform', 'translateX(' + (left - 10) + 'px) ' + 'translateY(' + (top + 10) + 'px) ' + 'scale(0.5)');
+        }
+        stack.style.zIndex = 10;
+        if (iframe.style.opacity === 1) {
+          Player.fade(parent, true, media);
+        } else {
+          iframe.onloaded = function(full) {
+            return Player.fade(parent, full, media);
+          };
+        }
+      } else {
+        media.classList.remove('expanded');
+        left = media.offsetWidth - play.offsetLeft - play.offsetWidth;
+        top = -play.offsetTop;
+        Player.set(play, 'transform', 'translateX(' + (left - 5) + 'px) translateY(' + (top + 5) + 'px) scale(0.5)');
+        iframe.style.left = media.offsetLeft + 'px';
+        iframe.style.top = media.offsetTop + 'px';
+        iframe.style.width = media.offsetWidth + 'px';
+        iframe.style.height = media.offsetHeight + 'px';
+        if (iframe.style.opacity === 1) {
+          img.style.opacity = 0;
+        } else {
+          iframe.onloaded = function(full) {
+            console.error('ONLOADED', full);
+            if (full) {
+              return img.style.opacity = 0;
+            } else {
+              return img.style.opacity = 0.8;
+            }
+          };
+        }
+        Player.expose(parent);
+      }
+    }
+  }
+};
+
+Player.fade = function(parent, full, media) {
+  var i, len, ref, results, sibling;
+  if (media) {
+    sibling = media.querySelector('picture, img');
+    if (full) {
+      sibling.style.opacity = 0;
+    }
+  }
+  ref = parent.parentNode.childNodes;
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    sibling = ref[i];
+    if (sibling.nodeType === 1 && sibling !== parent && sibling.tagName !== 'IFRAME' && !sibling.classList.contains('play')) {
+      if (full) {
+        results.push(sibling.style.opacity = 0);
+      } else {
+        results.push(sibling.style.opacity = 0.8);
+      }
+    } else {
+      results.push(void 0);
+    }
+  }
+  return results;
+};
+
+Player.expose = function(parent) {
+  var diff, i, len, ref, results, sibling, translateX, translateY;
+  ref = parent.parentNode.childNodes;
+  results = [];
+  for (i = 0, len = ref.length; i < len; i++) {
+    sibling = ref[i];
+    if (sibling.nodeType === 1 && sibling !== parent && sibling.tagName !== 'IFRAME') {
+      translateX = translateY = null;
+      if ((diff = sibling.offsetLeft + sibling.offsetWidth - parent.offsetLeft) > 2 && parent.offsetLeft >= sibling.offsetLeft) {
+        translateX = -diff - 2;
+      }
+      if ((diff = parent.offsetLeft + parent.offsetWidth - sibling.offsetLeft) > 2 && parent.offsetLeft <= sibling.offsetLeft) {
+        if (!translateX || Math.abs(diff) < Math.abs(translateX)) {
+          translateX = diff + 2;
+        }
+      }
+      if ((diff = sibling.offsetTop + sibling.offsetHeight - parent.offsetTop) > 2 && parent.offsetTop >= sibling.offsetTop) {
+        translateY = -diff - 2;
+      }
+      if ((diff = parent.offsetTop + parent.offsetHeight - sibling.offsetTop) > 2 && parent.offsetTop <= sibling.offsetTop) {
+        if (!translateY || Math.abs(diff) < Math.abs(translateY)) {
+          translateY = diff + 2;
+        }
+      }
+      if (Math.abs(translateX) > Math.abs(translateY)) {
+        results.push(Player.set(sibling, 'transform', 'translateY(' + translateY + 'px)'));
+      } else {
+        results.push(Player.set(sibling, 'transform', 'translateX(' + translateX + 'px)'));
+      }
+    } else {
+      results.push(void 0);
+    }
+  }
+  return results;
+};
+
 Player.hide = function(iframe) {
-  var i, len, parent, play, ref, ref1, sibling;
-  while (parent = (parent || iframe).parentNode) {
-    if ((ref = parent.classList) != null ? ref.contains('revealed') : void 0) {
-      parent.classList.remove('revealed');
+  var child, i, img, j, len, len1, media, parent, play, ref, ref1, ref2, ref3, sibling;
+  if (media = Player.findMedia(iframe)) {
+    if ((ref = media.classList) != null ? ref.contains('revealed') : void 0) {
+      media.classList.remove('revealed');
+      media.classList.remove('expanded');
+      Player.set(media, 'transform', '');
+      if (img = media.querySelector('picture, img')) {
+        img.style.zIndex = '';
+        img.style.opacity = '';
+        if (media.style.overflow === 'visible') {
+          img.style.clip = Player.rect(Player.getClipRect(img));
+          setTimeout(function() {
+            img.style.clip = '';
+            return media.style.overflow = '';
+          }, 300);
+        }
+      }
+      ref1 = media.childNodes;
+      for (i = 0, len = ref1.length; i < len; i++) {
+        child = ref1[i];
+        Player.set(child, 'transform', '');
+      }
+      parent = media;
       if (parent.parentNode.classList.contains('group')) {
         parent = parent.parentNode;
       }
       play = parent.getElementsByClassName('play')[0];
-      play.style.webkitTransform = '';
-      ref1 = parent.parentNode.childNodes;
-      for (i = 0, len = ref1.length; i < len; i++) {
-        sibling = ref1[i];
-        sibling.style.webkitTransform = '';
+      play.style.zIndex = '';
+      Player.set(play, 'transform', '');
+      ref2 = parent.parentNode.childNodes;
+      for (j = 0, len1 = ref2.length; j < len1; j++) {
+        sibling = ref2[j];
+        if (sibling.nodeType === 1 && sibling !== iframe) {
+          Player.set(sibling, 'transform', '');
+          sibling.style.opacity = '';
+        }
       }
+      if (!((ref3 = (parent = parent.parentNode).classList) != null ? ref3.contains('stack') : void 0)) {
+        parent = parent.parentNode;
+      }
+      parent.style.zIndex = '';
+      parent.style.visible = '';
     }
   }
   return revealed = null;
@@ -2210,29 +2478,32 @@ Player.stop = function(iframe) {
   var old;
   old = iframe;
   iframe.style.opacity = 0;
+  iframe.style.width = iframe.offsetWidth + 'px';
+  iframe.style.height = iframe.offsetHeight + 'px';
   setTimeout(function() {
     var ref;
     return (ref = old.parentNode) != null ? ref.removeChild(old) : void 0;
   }, 300);
+  clearTimeout(iframe.showing);
   Player.hide(iframe);
   return iframe = null;
 };
 
 document.addEventListener('click', function(e) {
-  var bg, color, header, parent, play, ref, ref1, results, styles, target;
-  target = e.target;
+  var bg, color, header, media, parent, play, ref, ref1, results, styles;
+  media = e.target;
   results = [];
-  while (target) {
-    if ((ref = target.classList) != null ? ref.contains('media') : void 0) {
-      if (play = target.getElementsByClassName('play')[0]) {
-        if ((iframe != null ? iframe.parentNode : void 0) === target) {
+  while (media) {
+    if ((ref = media.classList) != null ? ref.contains('media') : void 0) {
+      if (play = media.getElementsByClassName('play')[0]) {
+        if ((iframe != null ? iframe.parentNode : void 0) === media || (iframe != null ? iframe.parentNode : void 0) === media.parentNode) {
           Player.stop(iframe);
         } else {
           if (iframe) {
             Player.stop(iframe);
           }
           color = bg = null;
-          header = (ref1 = target.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
+          header = (ref1 = media.parentNode.parentNode.getElementsByClassName('title')[0]) != null ? ref1.firstChild : void 0;
           parent = header || play;
           while (parent) {
             if (parent.nodeType === 1) {
@@ -2251,14 +2522,14 @@ document.addEventListener('click', function(e) {
             parent = parent.parentNode;
           }
           iframe = Player(play.id + '-player', play.getAttribute('data-src'), play.getAttribute('data-width'), play.getAttribute('data-height'), rgb2hex(color), rgb2hex(bg));
-          target.appendChild(iframe);
+          media.parentNode.insertBefore(iframe, media);
           Player.reveal(iframe);
         }
         e.preventDefault();
         break;
       }
     }
-    results.push(target = target.parentNode);
+    results.push(media = media.parentNode);
   }
   return results;
 });
@@ -2273,7 +2544,7 @@ rgb2hex = function(rgb) {
 window.exports = window.Player = Player;
 
 
-},{}],9:[function(require,module,exports){
+},{"./reflow":9}],9:[function(require,module,exports){
 module.exports = {
   reflow: function(container) {
     var counter, heights, hidden, hole, holed, holes, i, id, ids, index, j, k, l, last, layout, layouts, len, len1, len2, len3, m, mutations, name, node, ref, ref1, ref2, stack, stacks;
